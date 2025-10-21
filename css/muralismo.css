@@ -131,10 +131,29 @@ body {
   text-shadow: 0 2px 12px rgba(0,0,0,0.55);
 }
 
-/* Descripción */
-.about-muralismo {
-  padding: 56px 0 72px;
-  background: var(--bg-paper);
+/* Descripción - versión unificada con 'Sobre nosotros' */
+.sobre-muralismo {
+  background-color: #111; /* Fondo oscuro */
+  color: #fff;            /* Texto blanco */
+  padding: 3rem 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.sobre-muralismo h2 {
+  color: #ffcc00;         /* Amarillo vibrante del título */
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.sobre-muralismo p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 800px;
+}
+.sobre-muralismo img {
+  max-width: 150px;
+  height: auto;
 }
 .container {
   width: min(1100px, 92vw);
@@ -143,13 +162,7 @@ body {
 .section-title {
   margin: 0 0 12px;
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  color: var(--gold);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-.about-muralismo h1 {
-  margin: 0 0 12px;
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  color: var(--gold);
+  color: #ffcc00; /* Mantener coherencia con 'Sobre nosotros' */
   text-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 .lead {
@@ -157,8 +170,8 @@ body {
   font-weight: 400;
   line-height: 1.7;
   font-size: clamp(1rem, 1.4vw, 1.18rem);
-  color: #222;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
 
 /* Footer */
@@ -172,3 +185,47 @@ body {
 
 /* Accesibilidad ligera */
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* Collage de murales */
+.collage-muralismo {
+  background-color: #111; /* Igual que la sección 'Sobre nosotros' */
+  padding: 3rem 2rem;
+}
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.collage-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collage-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .collage-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .collage-grid {
+    grid-template-columns: 1fr;
+  }
+}
