@@ -1,0 +1,174 @@
+/* Muralismo — estilos inspirados en Back2Basic */
+
+:root {
+  --bg-paper: #eae6df;
+  --black: #000;
+  --dark: #18191a;
+  --gold: #FFD700;
+  --wood-1: #b08d57;
+  --wood-2: #8d6b3a;
+  --frame: #d1bfa3;
+  --text: #1c1c1c;
+  --white: #fff;
+}
+
+/* Reseteo suave y tipografías consistentes */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Bebas Neue', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-paper) url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+  color: var(--text);
+}
+
+/* Header / Navbar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  backdrop-filter: blur(2px);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  min-height: 68px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+  text-decoration: none;
+}
+.brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px #0008);
+}
+.brand-sub {
+  font-size: 1.15rem;
+  letter-spacing: 1.2px;
+  opacity: 0.9;
+}
+.main-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.8px;
+  transition: color .18s ease;
+}
+.main-nav a:hover, .main-nav a:focus {
+  color: var(--gold);
+  outline: none;
+}
+
+/* Hero Video */
+/* Fondo de video a pantalla completa */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -2;
+}
+.bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Capa de hero sobre el video */
+.hero-layer {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.hero-center {
+  padding: 0 24px;
+}
+.hero-center h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--gold);
+  text-shadow: 0 3px 16px rgba(0,0,0,0.5);
+}
+.subtitle {
+  margin: 0;
+  color: #f7f7f7;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  letter-spacing: .3px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+}
+
+/* Descripción */
+.about-muralismo {
+  padding: 56px 0 72px;
+  background: var(--bg-paper);
+}
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+.section-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.about-muralismo h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.lead {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  color: #222;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 22px 0;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
+}
+.site-footer small { opacity: 0.8; letter-spacing: .6px; }
+
+/* Accesibilidad ligera */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
