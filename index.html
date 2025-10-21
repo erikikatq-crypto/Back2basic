@@ -7,18 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li class="brand-logo">
-                    <a href="index.html">
-                        <img src="images/art/Back2Basics.png" alt="Back2Basics Logo">
-                    </a>
-                </li>
 
-            </ul>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+
     <main>
         <section class="gallery-carousel-outer">
             <button class="gallery-nav gallery-nav-left" aria-label="Anterior" type="button">&#60;</button>
@@ -112,7 +103,16 @@
 
     <div class="version-badge">v0.5</div>
     <div class="watermark-badge">By cardenas.com.co</div>
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    const container = document.getElementById('header-container');
+                    if (container) container.innerHTML = data;
+                })
+                .catch(console.error);
+        </script>
     </main>
 </body>
 </html>
